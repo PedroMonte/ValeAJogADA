@@ -27,6 +27,7 @@
 		930305012BF3F70700693F4E /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 930304F32BF3F70700693F4E /* PlusJakartaSans-Italic.ttf */; };
 		930305022BF3F70700693F4E /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 930304F42BF3F70700693F4E /* PlusJakartaSans-Bold.ttf */; };
 		930305032BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 930304F52BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf */; };
+		930305052BF544F400693F4E /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930305042BF544F400693F4E /* PopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		930304F32BF3F70700693F4E /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlusJakartaSans-Italic.ttf"; path = "../../../../../../../Downloads/Plus_Jakarta_Sans-2/static/PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		930304F42BF3F70700693F4E /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlusJakartaSans-Bold.ttf"; path = "../../../../../../../Downloads/Plus_Jakarta_Sans-2/static/PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		930304F52BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlusJakartaSans-SemiBoldItalic.ttf"; path = "../../../../../../../Downloads/Plus_Jakarta_Sans-2/static/PlusJakartaSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		930305042BF544F400693F4E /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				930304E42BF3E27B00693F4E /* fonts */,
 				930304D42BF2AE5E00693F4E /* ValeAJogADAApp.swift */,
 				930304D62BF2AE5E00693F4E /* ContentView.swift */,
+				930305042BF544F400693F4E /* PopUp.swift */,
 				930304D82BF2AE5F00693F4E /* Assets.xcassets */,
 				930304DA2BF2AE5F00693F4E /* Preview Content */,
 				930304E22BF3D89900693F4E /* StyleGuide.swift */,
@@ -212,6 +215,7 @@
 			files = (
 				930304D72BF2AE5E00693F4E /* ContentView.swift in Sources */,
 				930304D52BF2AE5E00693F4E /* ValeAJogADAApp.swift in Sources */,
+				930305052BF544F400693F4E /* PopUp.swift in Sources */,
 				930304E32BF3D89900693F4E /* StyleGuide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
