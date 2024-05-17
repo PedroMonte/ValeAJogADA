@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PopUp: View {
+    
     @Binding var on: Bool
     var body: some View {
         ZStack (alignment: .leading){
@@ -65,10 +66,8 @@ struct PopUp: View {
                         Image("closebutton")
                     }
                 }.frame(maxWidth: .infinity)
-                
-                
             }.padding(.top, 24)
-            .padding(.bottom, 24)
+                .padding(.bottom, 24)
             
         }.frame(width: 343, height: 500)
             .foregroundStyle(.azulescuro)
@@ -79,4 +78,23 @@ struct PopUp: View {
     }
 }
 
+//#Preview {
+//   PopUp(on: .constant(true))
+//}
 
+//struct FormView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    PopUp(on: .constant(true))
+//  }
+//}
+
+//#Preview {
+//    struct Preview: View {
+//        @State var a = false
+//        var body: some View {
+//            PopUp(on: $a)
+//        }
+//    }
+//
+//    return Preview()
+//}

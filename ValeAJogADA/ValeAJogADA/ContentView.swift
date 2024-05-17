@@ -7,15 +7,17 @@
 
 import SwiftUI
 
-var jogos1 = ["1", "2", "3"]
+var jogos1 = ["The Castle of Burgundy        5", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
 var jogos2 = ["1", "2", "3", "4"]
 
 
 
 struct ContentView: View {
     @State var popupOn = false
-    @State var selectedGame1 = "Castles of Burgundy"
+    @State var selectedGame1 = "The Castle of Burgundy        5"
     @State var selectedGame5 = "4"
+    @State var searchText = ""
+    @State var searchActive = true
     var body: some View {
         ZStack(alignment: .top) {
             Color.branco
@@ -51,7 +53,7 @@ struct ContentView: View {
                                 Text(jogo).tag(jogo)
                                     .font(.header2)
                             }
-                        }
+                        }.padding()
                     }
                     ZStack {
                         Image("carta2")
@@ -150,6 +152,7 @@ struct ContentView: View {
                 }
                 
             }
+            
             if (popupOn) {
                 ZStack {
                     Color.black.opacity(0.65)
@@ -165,6 +168,7 @@ struct ContentView: View {
                 
             }
         }
+        
         
     }
 }
