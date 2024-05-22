@@ -28,7 +28,7 @@
 		930305022BF3F70700693F4E /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 930304F42BF3F70700693F4E /* PlusJakartaSans-Bold.ttf */; };
 		930305032BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 930304F52BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf */; };
 		930305052BF544F400693F4E /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930305042BF544F400693F4E /* PopUp.swift */; };
-		930305092BF650EC00693F4E /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930305082BF650EC00693F4E /* Games.swift */; };
+		930305092BF650EC00693F4E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930305082BF650EC00693F4E /* Game.swift */; };
 		9303050B2BF69CB800693F4E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303050A2BF69CB800693F4E /* DropDown.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		930304F42BF3F70700693F4E /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlusJakartaSans-Bold.ttf"; path = "../../../../../../../Downloads/Plus_Jakarta_Sans-2/static/PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		930304F52BF3F70700693F4E /* PlusJakartaSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PlusJakartaSans-SemiBoldItalic.ttf"; path = "../../../../../../../Downloads/Plus_Jakarta_Sans-2/static/PlusJakartaSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		930305042BF544F400693F4E /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
-		930305082BF650EC00693F4E /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		930305082BF650EC00693F4E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9303050A2BF69CB800693F4E /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,7 @@
 				930304E72BF3E5FF00693F4E /* Info.plist */,
 				930304E42BF3E27B00693F4E /* fonts */,
 				930304D42BF2AE5E00693F4E /* ValeAJogADAApp.swift */,
-				930305082BF650EC00693F4E /* Games.swift */,
+				930305082BF650EC00693F4E /* Game.swift */,
 				930304D62BF2AE5E00693F4E /* ContentView.swift */,
 				9303050A2BF69CB800693F4E /* DropDown.swift */,
 				930305042BF544F400693F4E /* PopUp.swift */,
@@ -223,7 +223,7 @@
 				930304D52BF2AE5E00693F4E /* ValeAJogADAApp.swift in Sources */,
 				9303050B2BF69CB800693F4E /* DropDown.swift in Sources */,
 				930305052BF544F400693F4E /* PopUp.swift in Sources */,
-				930305092BF650EC00693F4E /* Games.swift in Sources */,
+				930305092BF650EC00693F4E /* Game.swift in Sources */,
 				930304E32BF3D89900693F4E /* StyleGuide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

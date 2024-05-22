@@ -7,17 +7,41 @@
 
 import SwiftUI
 
-var jogos1 = ["The Castle of Burgundy        5", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
-var jogos2 = ["1", "2", "3", "4"]
-
-
+var games = addGames()
 
 struct ContentView: View {
     @State var popupOn = false
-    @State var selectedGame1 = "The Castle of Burgundy        5"
-    @State var selectedGame5 = "4"
-    @State var searchText = ""
-    @State var searchActive = true
+    @State var popupSelect = false
+    @State var selectedGame1: Game? = games[0]
+    @State var selectedGame2: Game? = games[0]
+    @State var selectedGame3: Game? = games[0]
+    @State var selectedGame4: Game? = games[0]
+    @State var selectedGame5: Game? = games[0]
+    var selectedGames: [Game] {
+        [
+            selectedGame1,
+            selectedGame2,
+            selectedGame3,
+            selectedGame4,
+        ].compactMap { $0 }
+    }
+    
+    var selectedGames2: [Game] {
+        [
+            selectedGame1,
+            selectedGame2,
+            selectedGame3,
+            selectedGame4,
+            selectedGame5
+        ].compactMap { $0 }
+    }
+    @State var games2 = addGames()
+    
+    
+    @State var result: Double = 0
+    @State var styles: [Double] = [0,0,0,0]
+    
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.branco
@@ -49,18 +73,24 @@ struct ContentView: View {
                     ZStack {
                         Image("cartaA")
                         Picker ("", selection: $selectedGame1){
-                            ForEach (jogos1, id: \.self) { jogo in
-                                Text(jogo).tag(jogo)
+                            ForEach(games.filter({$0 == selectedGame1 || !selectedGames.contains($0) || selectedGame1 == games[0]})) { game in
+                                
+                                Text(game.name)
+                                    .tag(game as Game?)
                                     .font(.header2)
+                                
                             }
                         }.padding()
                     }
                     ZStack {
                         Image("carta2")
-                        Picker ("", selection: $selectedGame1){
-                            ForEach (jogos1, id: \.self) { jogo in
-                                Text(jogo).tag(jogo)
+                        Picker ("", selection: $selectedGame2){
+                            ForEach(games.filter({$0 == selectedGame2 || !selectedGames.contains($0) || selectedGame1 == games[0]})) { game in
+                                
+                                Text(game.name)
+                                    .tag(game as Game?)
                                     .font(.header2)
+                                
                             }
                         }
                     }
@@ -68,19 +98,25 @@ struct ContentView: View {
                 HStack {
                     ZStack {
                         Image("carta3")
-                        Picker ("", selection: $selectedGame1){
-                            ForEach (jogos1, id: \.self) { jogo in
-                                Text(jogo).tag(jogo)
+                        Picker ("", selection: $selectedGame3){
+                            ForEach(games.filter({$0 == selectedGame3 || !selectedGames.contains($0) || selectedGame1 == games[0]})) { game in
+                                
+                                Text(game.name)
+                                    .tag(game as Game?)
                                     .font(.header2)
+                                
                             }
                         }
                     }
                     ZStack {
                         Image("carta4")
-                        Picker ("", selection: $selectedGame1){
-                            ForEach (jogos1, id: \.self) { jogo in
-                                Text(jogo).tag(jogo)
+                        Picker ("", selection: $selectedGame4){
+                            ForEach(games.filter({$0 == selectedGame4 || !selectedGames.contains($0) || selectedGame1 == games[0]})) { game in
+                                
+                                Text(game.name)
+                                    .tag(game as Game?)
                                     .font(.header2)
+                                
                             }
                         }
                     }
@@ -98,7 +134,7 @@ struct ContentView: View {
                 
                 ScrollView(.horizontal) {
                     HStack (spacing: 16) {
-                        ForEach (jogos2, id: \.self) { jogo in
+                        ForEach (games.filter({!selectedGames.contains($0) && $0 != games[0]})) { jogo in
                             
                             Button(action: {
                                 selectedGame5 = jogo
@@ -113,7 +149,7 @@ struct ContentView: View {
                                             .frame(width: 150, height: 150)
                                             .cornerRadius(20)
                                     }
-                                    Text(jogo)
+                                    Text(jogo.name)
                                         .font(.header2)
                                     
                                     
@@ -123,6 +159,7 @@ struct ContentView: View {
                         }
                         
                     }
+                    
                 }.padding(.leading, 24)
                     .padding(.trailing, 24)
                 
@@ -133,7 +170,26 @@ struct ContentView: View {
                         .cornerRadius(40)
                         .ignoresSafeArea()
                         .frame(height: 100)
-                    Button(action: {popupOn = true}) {
+                    Button(action: {
+                        var b = false
+                        for game in selectedGames {
+                            if game.name == "Selecionar" {
+                                b = true
+                                break
+                            }
+                        }
+                        if (!b) {
+                            popupOn = true
+                            styles = calculateStyles(games: selectedGames2)
+                            result = calculate(games: selectedGames2)
+                        } else {
+                            popupSelect = true
+                        }
+                        
+                        
+                        
+                        
+                    }) {
                         ZStack {
                             ZStack {
                                 Color (.vermelho)
@@ -151,6 +207,8 @@ struct ContentView: View {
                     
                 }
                 
+                
+                
             }
             
             if (popupOn) {
@@ -160,17 +218,20 @@ struct ContentView: View {
                         .onTapGesture {
                             self.popupOn.toggle()
                         }
-                    PopUp(on: $popupOn)
+                    PopUp(on: $popupOn, styles: $styles, result: $result, game5: $selectedGame5)
                     
                 }
                 
                 
                 
             }
+        }.alert("Selecione os jogos!", isPresented: $popupSelect) {
+            Button("OK", role: .cancel, action: {})
         }
         
         
     }
+    
 }
 
 #Preview {

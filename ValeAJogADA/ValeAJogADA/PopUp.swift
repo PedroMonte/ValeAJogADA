@@ -10,6 +10,12 @@ import SwiftUI
 struct PopUp: View {
     
     @Binding var on: Bool
+    @Binding var styles: [Double]
+    @Binding var result: Double
+    @Binding var game5: Game?
+    
+    @State var infoPopup: Bool = false
+    
     var body: some View {
         ZStack (alignment: .leading){
             Image("cartafinal")
@@ -21,45 +27,57 @@ struct PopUp: View {
                     .font(.header3)
                     .padding(.leading, 24)
                 Spacer()
+                
+                Button(action: {infoPopup = true}) {
+                    Image("button?")
+                }
+                
+                if (infoPopup) {
+                   
+                }
                 VStack (spacing: 16){
                     Spacer()
                     HStack {
-                        Button(action: {openInfo()}) {
-                            Image("button?")
-                        }
                         Text("Assassino")
                             .font(.body)
                             .foregroundStyle(.black)
+                        Text(String(Int(styles[0])))
                         Image("naipes1")
                         Text("Socializador")
                             .font(.body)
                             .foregroundStyle(.black)
-                        Button(action: {openInfo()}) {
-                            Image("button?")
-                        }
+                        Text(String(Int(styles[1])))
                     }
                     HStack {
-                        Button(action: {openInfo()}) {
-                            Image("button?")
-                        }
                         Text("Conquistador")
                             .font(.body)
                             .foregroundStyle(.black)
+                        Text(String(Int(styles[3])))
                         Image("naipes2")
                         Text("Explorador")
                             .font(.body)
                             .foregroundStyle(.black)
-                        Button(action: {openInfo()}) {
-                            Image("button?")
-                        }
+                        Text(String(Int(styles[2])))
+                        
                     }
                     
                     Text("Concluímos que:")
                         .font(.header3)
-                    Text("Vale a JogADA!")
-                        .font(.display)
-                    Text("Você irá adorar")
-                        .font(.header3)
+                    
+                    if (result >= 50) {
+                        Text("Vale a JogADA!")
+                            .font(.display)
+                        Text("Você irá adorar \(game5!.name)")
+                            .font(.header3)
+                        Text(String(Int(result)))
+                            .font(.header3)
+                    } else {
+                        Text("Talvez não valha a JogADA!")
+                            .font(.display)
+                        Text(String(Int(result)))
+                            .font(.header3)
+                    }
+                    
                     
                     Spacer()
                     Button (action: {self.on = false}) {
@@ -73,9 +91,6 @@ struct PopUp: View {
             .foregroundStyle(.azulescuro)
     }
     
-    func openInfo() {
-        
-    }
 }
 
 //#Preview {
