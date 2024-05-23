@@ -10,9 +10,10 @@ import SwiftUI
 extension Font {
     static let display: Font = .custom(CustomFonts.bold.rawValue, size: 32)
     static let header1: Font = .custom(CustomFonts.semiBold.rawValue, size: 20)
-    static let header2: Font = .custom(CustomFonts.semiBold.rawValue, size: 16)
-    static let header3: Font = .custom(CustomFonts.medium.rawValue, size: 16)
-    static let body: Font = .custom(CustomFonts.semiBold.rawValue, size: 12)
+    static let header2: Font = .custom(CustomFonts.semiBold.rawValue, size: 18)
+    static let header3: Font = .custom(CustomFonts.semiBold.rawValue, size: 16)
+    static let header4: Font = .custom(CustomFonts.medium.rawValue, size: 16)
+    static let body: Font = .custom(CustomFonts.semiBold.rawValue, size: 14)
     static let a: Font = .custom(CustomFonts.semiBold.rawValue, size: 20)
 }
 
