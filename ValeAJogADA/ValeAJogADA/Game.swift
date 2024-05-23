@@ -73,7 +73,7 @@ class Game: Identifiable, Equatable, Hashable {
             pont[1] += Double(self.playerCount.1 - 5)*5
         }
         
-        pont[2] += max(complexity - 2,0)*5
+        pont[2] += max(complexity - 2, 0)*5
         
         if self.hasPointSalad {
             pont[3] += 10

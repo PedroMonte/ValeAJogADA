@@ -14,7 +14,6 @@ extension Font {
     static let header3: Font = .custom(CustomFonts.semiBold.rawValue, size: 16)
     static let header4: Font = .custom(CustomFonts.medium.rawValue, size: 16)
     static let body: Font = .custom(CustomFonts.semiBold.rawValue, size: 14)
-    static let a: Font = .custom(CustomFonts.semiBold.rawValue, size: 20)
 }
 
 enum CustomFonts: String {

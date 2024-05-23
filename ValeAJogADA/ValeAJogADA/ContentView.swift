@@ -92,7 +92,7 @@ struct ContentView: View {
                                 
                             }
                         }.padding()
-                    }
+                    }.frame(width: 164, height: 81)
                     ZStack {
                         Image("carta2")
                         Picker ("", selection: $selectedGame2){
@@ -104,7 +104,7 @@ struct ContentView: View {
                                 
                             }
                         }
-                    }
+                    }.frame(width: 164, height: 81)
                 }
                 HStack {
                     ZStack {
@@ -118,7 +118,7 @@ struct ContentView: View {
                                 
                             }
                         }
-                    }
+                    }.frame(width: 164, height: 81)
                     ZStack {
                         Image("carta4")
                         Picker ("", selection: $selectedGame4){
@@ -130,7 +130,7 @@ struct ContentView: View {
                                 
                             }
                         }
-                    }
+                    }.frame(width: 164, height: 81)
                 }
                 
                 Spacer()

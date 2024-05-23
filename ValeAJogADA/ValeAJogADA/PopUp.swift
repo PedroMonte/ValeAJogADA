@@ -64,7 +64,7 @@ struct PopUp: View {
                         }
                         
                         HStack {
-                            Text(String(Int(styles[1])) + "%")
+                            Text(String(Int(styles[0])) + "%")
                                 .font(.body)
                                 .foregroundStyle(.azulescuro)
                             Spacer()
@@ -74,7 +74,7 @@ struct PopUp: View {
                                     .frame(width: 30, height: 30)
                             }
                             Spacer()
-                            Text(String(Int(styles[0])) + "%")
+                            Text(String(Int(styles[1])) + "%")
                                 .font(.body)
                                 .foregroundStyle(.azulescuro)
                         }.padding(.leading, 64)
